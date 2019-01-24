@@ -54,6 +54,14 @@ class Student extends Person {
     sprintChallenge(subject) {
         console.log(`${this.name} has has begun sprint challenge on ${subject}.`);
     }
+
+    graduate() {
+        if (this.grade > 70) {
+            console.log(`Congratulations, ${this.name} is now eligible to graduate!`)
+        } else {
+            console.log(`${this.name} is not ready to graduate. Continue with more assignments!`)
+        }
+    }
 }
 
 class ProjectManager extends Instructor {
@@ -113,8 +121,14 @@ fred.grade(pebbles, 'JavaScript');
 pebbles.listsSubjects();
 pebbles.PRAssignment('Advanced CSS');
 pebbles.sprintChallenge('JavaScript');
-wilma.debugsCode(pebbles,'JavaScript III')
-wilma.demo('JavaScript III')
-wilma.standUp('WEB17')
-console.log(pebbles.grade)
-wilma.randomGrade(pebbles)
+wilma.debugsCode(pebbles,'JavaScript III');
+wilma.demo('JavaScript III');
+wilma.standUp('WEB17');
+console.log(pebbles.grade);
+wilma.randomGrade(pebbles);
+wilma.randomGrade(pebbles);
+wilma.randomGrade(pebbles);
+wilma.randomGrade(pebbles);
+wilma.randomGrade(pebbles);
+wilma.randomGrade(pebbles);
+pebbles.graduate();
