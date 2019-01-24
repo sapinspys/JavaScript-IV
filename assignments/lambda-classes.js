@@ -28,6 +28,11 @@ class Instructor extends Person {
     grade(student, subject) {
       console.log(`${student.name} receives a perfect score on ${subject}!`)
     }
+
+    randomGrade(student) {
+        student.grade += Math.round(Math.random() * (10 - (-10)) + (-10));
+        console.log(`${this.name} grades ${student.name}'s assignment. ${student.name}'s overall grade is now: ${student.grade}%`)
+    }
   }
 
 class Student extends Person {
@@ -35,6 +40,7 @@ class Student extends Person {
         super(learningAttributes);
         this.previousBackground = learningAttributes.previousBackground;
         this.favSubjects = learningAttributes.favSubjects;
+        this.grade = learningAttributes.grade;
     }
 
     listsSubjects() {
@@ -82,7 +88,8 @@ const pebbles = new Student({
     age: 7,
     gender: 'Female',
     previousBackground: 'Python',
-    favSubjects: ['Data Analytics', 'Python', 'IoT']
+    favSubjects: ['Data Analytics', 'Python', 'IoT'],
+    grade: 80
 });
 
 const wilma = new ProjectManager({
@@ -109,3 +116,5 @@ pebbles.sprintChallenge('JavaScript');
 wilma.debugsCode(pebbles,'JavaScript III')
 wilma.demo('JavaScript III')
 wilma.standUp('WEB17')
+console.log(pebbles.grade)
+wilma.randomGrade(pebbles)
